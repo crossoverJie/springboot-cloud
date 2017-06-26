@@ -1,4 +1,4 @@
-package com.crossoverJie.sbcuser.common.util;
+package com.crossoverJie.sbcorder.common.util;
 /**
  * Function:字符串工具类
  * @author chenjiec

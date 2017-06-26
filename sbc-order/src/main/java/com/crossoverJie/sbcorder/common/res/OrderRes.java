@@ -7,7 +7,7 @@ package com.crossoverJie.sbcuser.common.res;
  *         Date: 2017/6/8 上午12:01
  * @since JDK 1.8
  */
-public class UserRes extends BaseResponse{
+public class OrderRes extends BaseResponse{
     private long userId ;
     private String userName ;
 
@@ -29,7 +29,7 @@ public class UserRes extends BaseResponse{
 
     @Override
     public String toString() {
-        return "UserRes{" +
+        return "OrderRes{" +
                 "userId=" + userId +
                 ", userName='" + userName + '\'' +
                 '}';

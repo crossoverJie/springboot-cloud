@@ -1,8 +1,8 @@
-package com.crossoverJie.sbcuser.common.res;
+package com.crossoverJie.sbcorder.common.res;
 
 
-import com.crossoverJie.sbcuser.common.enums.StatusEnum;
-import com.crossoverJie.sbcuser.common.util.StringUtil;
+import com.crossoverJie.sbcorder.common.enums.StatusEnum;
+import com.crossoverJie.sbcorder.common.util.StringUtil;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.crossoverJie.sbcuser.common.req;
+package com.crossoverJie.sbcorder.common.req;
 
 import io.swagger.annotations.ApiModelProperty;
 

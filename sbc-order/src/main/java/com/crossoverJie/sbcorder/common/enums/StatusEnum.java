@@ -1,4 +1,4 @@
-package com.crossoverJie.sbcuser.common.enums;
+package com.crossoverJie.sbcorder.common.enums;
 
 import java.util.ArrayList;
 import java.util.List;
