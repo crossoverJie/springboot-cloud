@@ -1,6 +1,8 @@
 package com.crossoverJie.sbcorder.controller;
 
 import com.crossoverJie.sbcorder.common.enums.StatusEnum;
+import com.crossoverJie.sbcorder.common.res.BaseResponse;
+import com.crossoverJie.sbcorder.common.util.DateUtil;
 import com.crossoverJie.sbcorder.req.OrderNoReq;
 import com.crossoverJie.sbcorder.res.OrderNoRes;
 import org.slf4j.Logger;
@@ -23,14 +25,17 @@ public class OrderController {
 
 
     @RequestMapping(value = "getOrderNo" ,method = RequestMethod.POST)
-    public OrderNoRes getOrderNo(@RequestBody OrderNoReq orderNoReq){
-        OrderNoRes res = new OrderNoRes() ;
+    public BaseResponse<OrderNoRes> getOrderNo(@RequestBody OrderNoReq orderNoReq){
+        BaseResponse<OrderNoRes> res = new BaseResponse();
+        res.setReqNo(orderNoReq.getReqNo());
         if (null == orderNoReq.getAppId()){
             res.setCode(StatusEnum.FAIL.getCode());
             res.setMessage("appID不能为空");
             return res ;
         }
-
+        OrderNoRes orderNoRes = new OrderNoRes() ;
+        orderNoRes.setOrderId(DateUtil.getLongTime());
+        res.setDataBody(orderNoRes);
         return res ;
     }
 }
