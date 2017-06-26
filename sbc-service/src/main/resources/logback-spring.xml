@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="LOG_PATH" value="/opt/logs/sbc-service" />
+    <property name="LOG_FILE_NAME" value="service" />
+    <property name="LOG_FILE" value="service.log"/>
+
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+    <include resource="org/springframework/boot/logging/logback/file-appender.xml" />
+
+
+
+    <springProfile name="!production">
+        <appender name="LOGFILE-INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <filter class="ch.qos.logback.classic.filter.LevelFilter">
+                <level>INFO</level>
+                <onMatch>ACCEPT</onMatch>
+                <onMismatch>DENY</onMismatch>
+            </filter>
+            <File>${LOG_PATH}/dev/${LOG_FILE_NAME}-info.log</File>
+            <rollingPolicy
+                    class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <FileNamePattern>${LOG_PATH}/dev/server_%d{yyyy-MM-dd}.log.%d{yyyy-MM-dd}</FileNamePattern>
+            </rollingPolicy>
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <pattern>[%date{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] %p %C %t, - %msg%n</pattern>
+            </layout>
+        </appender>
+
+        <appender name="LOGFILE-ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <filter class="ch.qos.logback.classic.filter.LevelFilter">
+                <level>ERROR</level>
+                <onMatch>ACCEPT</onMatch>
+                <onMismatch>DENY</onMismatch>
+            </filter>
+            <File>${LOG_PATH}/dev/${LOG_FILE_NAME}-error.log</File>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <FileNamePattern>${LOG_PATH}/server_%d{yyyy-MM-dd}.%d{yyyy-MM-dd}</FileNamePattern>
+            </rollingPolicy>
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <pattern>[%date{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] %p %C %t, - %msg%n</pattern>
+            </layout>
+        </appender>
+
+        <appender name="LOGFILE-DEBUG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <filter class="ch.qos.logback.classic.filter.LevelFilter">
+                <level>DEBUG</level>
+                <onMatch>ACCEPT</onMatch>
+                <onMismatch>DENY</onMismatch>
+            </filter>
+            <File>${LOG_PATH}/dev/${LOG_FILE_NAME}-debug.log</File>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <FileNamePattern>${LOG_PATH}/server_%d{yyyy-MM-dd}.debug.log.%d{yyyy-MM-dd}</FileNamePattern>
+            </rollingPolicy>
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <pattern>[%date{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] %p %C %t, - %msg%n</pattern>
+            </layout>
+        </appender>
+
+    </springProfile>
+
+    <springProfile name="production">
+        <appender name="LOGFILE-INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <filter class="ch.qos.logback.classic.filter.LevelFilter">
+                <level>INFO</level>
+                <onMatch>ACCEPT</onMatch>
+                <onMismatch>DENY</onMismatch>
+            </filter>
+            <File>${LOG_PATH}/${LOG_FILE_NAME}-info.log</File>
+            <rollingPolicy
+                    class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <FileNamePattern>${LOG_PATH}/${LOG_FILE_NAME}_%d{yyyy-MM-dd}.log.%d{yyyy-MM-dd}</FileNamePattern>
+            </rollingPolicy>
+            <encoder>
+                <pattern>[%date{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] %p %C %t, - %msg%n</pattern>
+                <charset>UTF-8</charset> <!-- 此处设置字符集 -->
+            </encoder>
+            <!--
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <pattern>[%date{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] %p %C %t, - %msg%n</pattern>
+            </layout>
+            -->
+        </appender>
+
+        <appender name="LOGFILE-ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <filter class="ch.qos.logback.classic.filter.LevelFilter">
+                <level>ERROR</level>
+                <onMatch>ACCEPT</onMatch>
+                <onMismatch>DENY</onMismatch>
+            </filter>
+            <File>${LOG_PATH}/${LOG_FILE_NAME}-error.log</File>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <FileNamePattern>${LOG_PATH}/${LOG_FILE_NAME}_%d{yyyy-MM-dd}.%d{yyyy-MM-dd}</FileNamePattern>
+            </rollingPolicy>
+            <encoder>
+                <pattern>[%date{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] %p %C %t, - %msg%n</pattern>
+                <charset>UTF-8</charset> <!-- 此处设置字符集 -->
+            </encoder>
+            <!--<layout class="ch.qos.logback.classic.PatternLayout">
+                <pattern>[%date{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] %p %C %t, - %msg%n</pattern>
+            </layout>
+            -->
+        </appender>
+    </springProfile>
+
+
+
+    <root level="INFO">
+        <!--<if condition='!"production".equalsIgnoreCase("${spring.profiles.active}")'>-->
+            <!--<then>-->
+                <!--<appender-ref ref="CONSOLE" />-->
+            <!--</then>-->
+        <!--</if>-->
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="LOGFILE-INFO" />
+        <appender-ref ref="LOGFILE-ERROR" />
+    </root>
+
+
+</configuration>
