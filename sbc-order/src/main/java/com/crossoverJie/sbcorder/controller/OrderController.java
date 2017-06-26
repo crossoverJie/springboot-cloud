@@ -35,6 +35,8 @@ public class OrderController {
         }
         OrderNoRes orderNoRes = new OrderNoRes() ;
         orderNoRes.setOrderId(DateUtil.getLongTime());
+        res.setCode(StatusEnum.SUCCESS.getCode());
+        res.setMessage(StatusEnum.SUCCESS.getMessage());
         res.setDataBody(orderNoRes);
         return res ;
     }
