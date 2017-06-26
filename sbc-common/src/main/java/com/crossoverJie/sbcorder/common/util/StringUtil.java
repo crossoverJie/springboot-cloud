@@ -1,7 +1,7 @@
 package com.crossoverJie.sbcorder.common.util;
 /**
  * Function:字符串工具类
- * @author chenjiec
+ * @author crossoverJie
  * Date: 2017/6/7 下午11:45
  * @since JDK 1.8
  */
