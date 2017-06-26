@@ -1,4 +1,6 @@
-package com.crossoverJie.sbcuser.common.req;
+package com.crossoverJie.sbcuser.req;
+
+import com.crossoverJie.sbcorder.common.req.BaseRequest;
 
 /**
  * Function:

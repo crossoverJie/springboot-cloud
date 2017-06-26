@@ -1,4 +1,6 @@
-package com.crossoverJie.sbcuser.common.res;
+package com.crossoverJie.sbcuser.res;
+
+import com.crossoverJie.sbcorder.common.res.BaseResponse;
 
 /**
  * Function:
@@ -7,7 +9,7 @@ package com.crossoverJie.sbcuser.common.res;
  *         Date: 2017/6/8 上午12:01
  * @since JDK 1.8
  */
-public class UserRes extends BaseResponse{
+public class UserRes extends BaseResponse {
     private long userId ;
     private String userName ;
 
