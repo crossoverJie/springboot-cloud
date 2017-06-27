@@ -8,15 +8,15 @@
 │   ├── src/main
 │   ├── ├──java/com/crossoverJie/sbcorder/common  // 具体代码。  
 │   ├── ├──resources
-├── sbc-order                                     // order应用
+├── sbc-order                                     // order应用            :8181端口
 │   ├── src/main
 │   ├── ├──java/com/crossoverJie/sbcorder         // 具体代码
 │   ├── ├──resources
-├── sbc-service                                   // eureka-server注册中心
+├── sbc-service                                   // eureka-server注册中心 :8888端口
 │   ├── src/main
 │   ├── ├──java/com/crossoverJie/service/         // 具体代码
 │   ├── ├──resources
-├── sbc-user                                      // user应用
+├── sbc-user                                      // user应用             :8080端口
 │   ├── src/main
 │   ├── ├──java/com/crossoverJie/sbcuser/
 │   ├── ├──resources
@@ -39,7 +39,7 @@
 * [ ] `Feign`声明式远程调用,`Eureka`高可用注册中心,`Swagger2`管理`REST API`。
 * [ ] 基于`SpringBoot`重构:[https://github.com/crossoverJie/SSM-REQUEST-CHECK](https://github.com/crossoverJie/SSM-REQUEST-CHECK)
 * [ ] 通用的异常处理、日志插件、集成logback。
-* [ ] 其他待续。。。
+* [ ] 更多功能未完待续。。。
 
 # 联系作者
 - [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
