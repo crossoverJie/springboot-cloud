@@ -33,7 +33,7 @@
 ![https://ooo.0o0.ooo/2017/06/26/59511cef59d46.jpg](https://ooo.0o0.ooo/2017/06/26/59511cef59d46.jpg)
 
 
-## TODO List
+## TODO LIST
 
 * [x] SpringBoot+SpringCloud初探:[https://crossoverjie.top/2017/06/15/sbc1/](https://crossoverjie.top/2017/06/15/sbc1)
 * [ ] `Feign`声明式远程调用,`Eureka`高可用注册中心,`Swagger2`管理`REST API`。
@@ -41,6 +41,10 @@
 * [ ] 通用的异常处理、日志插件、集成logback。
 * [ ] 其他待续。。。
 
+# 联系作者
+- [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
+
+![weixinchat.jpg](https://ooo.0o0.ooo/2017/04/25/58ff4d5fd9fa3.jpg)
 
 
 
