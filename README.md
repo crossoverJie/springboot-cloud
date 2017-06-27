@@ -27,12 +27,6 @@
 
 ```
 
-
-- SpringBoot+SpringCloud初探 ：[https://crossoverjie.top/2017/06/15/sbc1/](https://crossoverjie.top/2017/06/15/sbc1)
-
-![https://ooo.0o0.ooo/2017/06/26/59511cef59d46.jpg](https://ooo.0o0.ooo/2017/06/26/59511cef59d46.jpg)
-
-
 ## TODO LIST
 
 * [x] SpringBoot+SpringCloud初探:[https://crossoverjie.top/2017/06/15/sbc1/](https://crossoverjie.top/2017/06/15/sbc1)
@@ -40,6 +34,9 @@
 * [ ] 基于`SpringBoot`重构:[https://github.com/crossoverJie/SSM-REQUEST-CHECK](https://github.com/crossoverJie/SSM-REQUEST-CHECK)
 * [ ] 通用的异常处理、日志插件、集成logback。
 * [ ] 更多功能未完待续。。。
+
+## 应用截图
+![https://ooo.0o0.ooo/2017/06/26/59511cef59d46.jpg](https://ooo.0o0.ooo/2017/06/26/59511cef59d46.jpg)
 
 # 联系作者
 - [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
