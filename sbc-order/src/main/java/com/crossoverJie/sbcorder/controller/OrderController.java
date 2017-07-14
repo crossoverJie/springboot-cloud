@@ -1,6 +1,7 @@
 package com.crossoverJie.sbcorder.controller;
 
 import com.crossoverJie.sbcorder.common.enums.StatusEnum;
+import com.crossoverJie.sbcorder.common.exception.SBCException;
 import com.crossoverJie.sbcorder.common.res.BaseResponse;
 import com.crossoverJie.sbcorder.common.util.DateUtil;
 import com.crossoverJie.sbcorder.req.OrderNoReq;
@@ -29,9 +30,7 @@ public class OrderController {
         BaseResponse<OrderNoRes> res = new BaseResponse();
         res.setReqNo(orderNoReq.getReqNo());
         if (null == orderNoReq.getAppId()){
-            res.setCode(StatusEnum.FAIL.getCode());
-            res.setMessage("appID不能为空");
-            return res ;
+           throw new SBCException(StatusEnum.FAIL);
         }
         OrderNoRes orderNoRes = new OrderNoRes() ;
         orderNoRes.setOrderId(DateUtil.getLongTime());

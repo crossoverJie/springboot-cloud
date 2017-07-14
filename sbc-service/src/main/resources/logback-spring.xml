@@ -17,10 +17,10 @@
                 <onMatch>ACCEPT</onMatch>
                 <onMismatch>DENY</onMismatch>
             </filter>
-            <File>${LOG_PATH}/dev/${LOG_FILE_NAME}-info.log</File>
+            <File>${LOG_PATH}/${LOG_FILE_NAME}-info.log</File>
             <rollingPolicy
                     class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-                <FileNamePattern>${LOG_PATH}/dev/server_%d{yyyy-MM-dd}.log.%d{yyyy-MM-dd}</FileNamePattern>
+                <FileNamePattern>${LOG_PATH}/server_%d{yyyy-MM-dd}.log.%d{yyyy-MM-dd}</FileNamePattern>
             </rollingPolicy>
             <layout class="ch.qos.logback.classic.PatternLayout">
                 <pattern>[%date{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] %p %C %t, - %msg%n</pattern>
@@ -33,7 +33,7 @@
                 <onMatch>ACCEPT</onMatch>
                 <onMismatch>DENY</onMismatch>
             </filter>
-            <File>${LOG_PATH}/dev/${LOG_FILE_NAME}-error.log</File>
+            <File>${LOG_PATH}/${LOG_FILE_NAME}-error.log</File>
             <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
                 <FileNamePattern>${LOG_PATH}/server_%d{yyyy-MM-dd}.%d{yyyy-MM-dd}</FileNamePattern>
             </rollingPolicy>
@@ -48,7 +48,7 @@
                 <onMatch>ACCEPT</onMatch>
                 <onMismatch>DENY</onMismatch>
             </filter>
-            <File>${LOG_PATH}/dev/${LOG_FILE_NAME}-debug.log</File>
+            <File>${LOG_PATH}/${LOG_FILE_NAME}-debug.log</File>
             <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
                 <FileNamePattern>${LOG_PATH}/server_%d{yyyy-MM-dd}.debug.log.%d{yyyy-MM-dd}</FileNamePattern>
             </rollingPolicy>
