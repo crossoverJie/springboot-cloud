@@ -1,16 +1,16 @@
 package com.crossoverJie.sbcorder.controller;
 
+import com.crossoverJie.order.api.OrderService;
+import com.crossoverJie.order.vo.req.OrderNoReqVO;
+import com.crossoverJie.order.vo.res.OrderNoResVO;
 import com.crossoverJie.sbcorder.common.enums.StatusEnum;
 import com.crossoverJie.sbcorder.common.exception.SBCException;
 import com.crossoverJie.sbcorder.common.res.BaseResponse;
 import com.crossoverJie.sbcorder.common.util.DateUtil;
-import com.crossoverJie.sbcorder.req.OrderNoReq;
-import com.crossoverJie.sbcorder.res.OrderNoRes;
+import io.swagger.annotations.Api;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -20,19 +20,19 @@ import org.springframework.web.bind.annotation.RestController;
  * @since JDK 1.8
  */
 @RestController
-@RequestMapping("/order")
-public class OrderController {
+@Api(value = "orderApi", description = "订单API", tags = {"订单服务"})
+public class OrderController implements OrderService{
     private final static Logger logger = LoggerFactory.getLogger(OrderController.class);
 
 
-    @RequestMapping(value = "getOrderNo" ,method = RequestMethod.POST)
-    public BaseResponse<OrderNoRes> getOrderNo(@RequestBody OrderNoReq orderNoReq){
-        BaseResponse<OrderNoRes> res = new BaseResponse();
+    @Override
+    public BaseResponse<OrderNoResVO> getOrderNo(@RequestBody OrderNoReqVO orderNoReq) {
+        BaseResponse<OrderNoResVO> res = new BaseResponse();
         res.setReqNo(orderNoReq.getReqNo());
         if (null == orderNoReq.getAppId()){
-           throw new SBCException(StatusEnum.FAIL);
+            throw new SBCException(StatusEnum.FAIL);
         }
-        OrderNoRes orderNoRes = new OrderNoRes() ;
+        OrderNoResVO orderNoRes = new OrderNoResVO() ;
         orderNoRes.setOrderId(DateUtil.getLongTime());
         res.setCode(StatusEnum.SUCCESS.getCode());
         res.setMessage(StatusEnum.SUCCESS.getMessage());

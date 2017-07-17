@@ -1,4 +1,4 @@
-package com.crossoverJie.sbcorder.req;
+package com.crossoverJie.order.vo.req;
 
 import com.crossoverJie.sbcorder.common.req.BaseRequest;
 import io.swagger.annotations.ApiModelProperty;
@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
  *         Date: 2017/6/26 15:56
  * @since JDK 1.8
  */
-public class OrderNoReq extends BaseRequest{
+public class OrderNoReqVO extends BaseRequest{
 
     @NotNull(message = "应用ID不能为空")
     @ApiModelProperty(required = true, value = "应用ID", example = "00100")

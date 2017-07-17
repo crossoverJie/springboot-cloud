@@ -1,7 +1,11 @@
 package com.crossoverJie.sbcuser.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.crossoverJie.order.feign.api.OrderServiceClient;
+import com.crossoverJie.order.vo.req.OrderNoReqVO;
+import com.crossoverJie.order.vo.res.OrderNoResVO;
 import com.crossoverJie.sbcorder.common.enums.StatusEnum;
+import com.crossoverJie.sbcorder.common.res.BaseResponse;
 import com.crossoverJie.sbcuser.req.OrderNoReq;
 import com.crossoverJie.sbcuser.req.UserReq;
 import com.crossoverJie.sbcuser.res.UserRes;
@@ -26,8 +30,11 @@ import org.springframework.web.client.RestTemplate;
 public class UserController {
     private final static Logger logger = LoggerFactory.getLogger(UserController.class);
 
-    @Autowired
+    //@Autowired
     private RestTemplate restTemplate;
+
+    @Autowired
+    private OrderServiceClient orderServiceClient ;
 
     @RequestMapping(value = "/getUser",method = RequestMethod.POST)
     public UserRes getUser(@RequestBody UserReq userReq){
@@ -38,6 +45,28 @@ public class UserController {
         logger.info("res="+JSON.toJSONString(res));
 
         logger.debug("入参="+ JSON.toJSONString(userReq));
+        UserRes userRes = new UserRes() ;
+        userRes.setUserId(123);
+        userRes.setUserName("张三");
+
+        userRes.setReqNo(userReq.getReqNo());
+        userRes.setCode(StatusEnum.SUCCESS.getCode());
+        userRes.setMessage("成功");
+
+        return userRes ;
+
+    }
+
+
+    @RequestMapping(value = "/getUserByFeign",method = RequestMethod.POST)
+    public UserRes getUserByFeign(@RequestBody UserReq userReq){
+        //调用远程服务
+        OrderNoReqVO vo = new OrderNoReqVO() ;
+        vo.setReqNo(userReq.getReqNo());
+        BaseResponse<OrderNoResVO> orderNo = orderServiceClient.getOrderNo(vo);
+
+        logger.info("远程返回:"+JSON.toJSONString(orderNo));
+
         UserRes userRes = new UserRes() ;
         userRes.setUserId(123);
         userRes.setUserName("张三");

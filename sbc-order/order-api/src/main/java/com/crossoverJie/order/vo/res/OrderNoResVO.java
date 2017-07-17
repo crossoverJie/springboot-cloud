@@ -1,4 +1,4 @@
-package com.crossoverJie.sbcorder.res;
+package com.crossoverJie.order.vo.res;
 
 /**
  * Function:
@@ -7,7 +7,7 @@ package com.crossoverJie.sbcorder.res;
  *         Date: 2017/6/26 15:43
  * @since JDK 1.8
  */
-public class OrderNoRes {
+public class OrderNoResVO {
     private Long orderId ;
 
     public Long getOrderId() {
