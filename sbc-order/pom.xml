@@ -6,15 +6,9 @@
 	<groupId>com.crossoverJie</groupId>
 	<artifactId>sbc-order</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-	<dependencies>
-		<dependency>
-			<groupId>com.crossoverJie</groupId>
-			<artifactId>sbc-common</artifactId>
-		</dependency>
-	</dependencies>
 	<packaging>pom</packaging>
 
-    <modules>
+	<modules>
 		<module>order</module>
 		<module>order-client</module>
 		<module>order-api</module>
@@ -37,7 +31,6 @@
 		<target.version>1.0.0-SNAPSHOT</target.version>
 		<swagger.version>2.5.0</swagger.version>
 	</properties>
-
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -74,7 +67,7 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Brixton.RELEASE</version>
+				<version>Camden.SR6</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

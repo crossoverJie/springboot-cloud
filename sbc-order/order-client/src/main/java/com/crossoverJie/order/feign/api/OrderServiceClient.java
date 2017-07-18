@@ -6,6 +6,7 @@ import com.crossoverJie.order.vo.res.OrderNoResVO;
 import com.crossoverJie.sbcorder.common.res.BaseResponse;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @RequestMapping(value="/orderService")
 @FeignClient(name="sbc-order")
-//@RibbonClient
+@RibbonClient
 public interface OrderServiceClient extends OrderService{
 
 

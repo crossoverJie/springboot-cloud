@@ -9,6 +9,8 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
 @EnableDiscoveryClient
 @SpringBootApplication
+
+//扫描feign包
 @EnableFeignClients(basePackages = {"com.crossoverJie.order.feign.api"})
 public class SbcUserApplication {
 	private static final Logger logger = LoggerFactory.getLogger(SbcUserApplication.class);

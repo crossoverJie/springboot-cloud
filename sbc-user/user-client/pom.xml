@@ -6,44 +6,27 @@
 
     <parent>
         <groupId>com.crossoverJie</groupId>
-        <artifactId>sbc-order</artifactId>
+        <artifactId>sbc-user</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
     <groupId>com.crossoverJie</groupId>
-    <artifactId>order-api</artifactId>
+    <artifactId>user-client</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <description>order API客户端</description>
+    <description>user client客户端</description>
 
     <dependencies>
         <dependency>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-            <version>1.1.0.Final</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>5.2.4.Final</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
             <groupId>com.crossoverJie</groupId>
-            <artifactId>sbc-common</artifactId>
+            <artifactId>user-api</artifactId>
+            <version>${target.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
             <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <scope>compile</scope>
-        </dependency>
-
     </dependencies>
 
     <build>

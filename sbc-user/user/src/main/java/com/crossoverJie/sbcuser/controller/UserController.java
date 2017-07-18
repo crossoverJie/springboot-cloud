@@ -7,15 +7,16 @@ import com.crossoverJie.order.vo.res.OrderNoResVO;
 import com.crossoverJie.sbcorder.common.enums.StatusEnum;
 import com.crossoverJie.sbcorder.common.res.BaseResponse;
 import com.crossoverJie.sbcuser.req.OrderNoReq;
-import com.crossoverJie.sbcuser.req.UserReq;
 import com.crossoverJie.sbcuser.res.UserRes;
+import com.crossoverJie.user.api.UserService;
+import com.crossoverJie.user.vo.req.UserReqVO;
+import com.crossoverJie.user.vo.res.UserResVO;
+import io.swagger.annotations.Api;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -26,8 +27,8 @@ import org.springframework.web.client.RestTemplate;
  * @since JDK 1.8
  */
 @RestController
-@RequestMapping("/user")
-public class UserController {
+@Api(value = "userApi", description = "用户API", tags = {"用户服务"})
+public class UserController implements UserService{
     private final static Logger logger = LoggerFactory.getLogger(UserController.class);
 
     //@Autowired
@@ -36,8 +37,9 @@ public class UserController {
     @Autowired
     private OrderServiceClient orderServiceClient ;
 
-    @RequestMapping(value = "/getUser",method = RequestMethod.POST)
-    public UserRes getUser(@RequestBody UserReq userReq){
+
+    @Override
+    public BaseResponse<UserResVO> getOrderNo(@RequestBody UserReqVO userReq) {
         OrderNoReq req = new OrderNoReq() ;
         req.setReqNo("1213");
         //调用远程服务
@@ -54,12 +56,10 @@ public class UserController {
         userRes.setMessage("成功");
 
         return userRes ;
-
     }
 
-
-    @RequestMapping(value = "/getUserByFeign",method = RequestMethod.POST)
-    public UserRes getUserByFeign(@RequestBody UserReq userReq){
+    @Override
+    public BaseResponse<UserResVO> getUserByFeign(@RequestBody UserReqVO userReq) {
         //调用远程服务
         OrderNoReqVO vo = new OrderNoReqVO() ;
         vo.setReqNo(userReq.getReqNo());
@@ -76,6 +76,5 @@ public class UserController {
         userRes.setMessage("成功");
 
         return userRes ;
-
     }
 }
