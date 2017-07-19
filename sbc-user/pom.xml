@@ -74,6 +74,11 @@
                  Attribute 'value' in annotation [org.springframework.cloud.netflix.feign.FeignClient] must be declared as an @AliasFor [serviceId], not [name].
                  异常
                  Camden.RELEASE
+
+                 各个版本对应关系
+                 Angel版本对应Spring Boot 1.2.x
+                 Brixton版本对应Spring Boot 1.3.x
+                 Camden版本对应Spring Boot 1.4.x
                 -->
                 <version>Camden.SR6</version>
                 <type>pom</type>
