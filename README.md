@@ -35,10 +35,10 @@
 * [ ] 通用的异常处理、日志插件、集成logback。
 * [ ] 更多功能未完待续。。。
 
-## 应用截图
+## Partial Screenshots
 ![https://ooo.0o0.ooo/2017/06/26/59511cef59d46.jpg](https://ooo.0o0.ooo/2017/06/26/59511cef59d46.jpg)
 
-# 联系作者
+# Contact Author
 - [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
 
 ![weixinchat.jpg](https://i.loli.net/2017/07/21/5971592b04340.jpg)
