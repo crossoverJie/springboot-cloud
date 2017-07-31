@@ -1,5 +1,6 @@
 package com.crossoverJie.request.check.interceptor;
 
+import com.crossoverJie.request.check.properties.CheckReqProperties;
 import com.crossoverJie.sbcorder.common.enums.StatusEnum;
 import com.crossoverJie.sbcorder.common.exception.SBCException;
 import com.crossoverJie.sbcorder.common.req.BaseRequest;
@@ -11,7 +12,6 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.data.redis.RedisConnectionFailureException;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -35,11 +35,11 @@ import java.util.concurrent.TimeUnit;
 public class ReqNoDrcAspect {
     private static Logger logger = LoggerFactory.getLogger(ReqNoDrcAspect.class);
 
+    @Autowired
+    private CheckReqProperties properties ;
 
-    @Value("${redis.prefixReq:reqNo}")
     private String prefixReq ;
 
-    @Value("${redis.day:1}")
     private long day ;
 
     @Autowired
@@ -47,7 +47,10 @@ public class ReqNoDrcAspect {
 
     @PostConstruct
     public void init() throws Exception {
+        prefixReq = properties.getRedisKey() == null ? "reqNo" : properties.getRedisKey() ;
+        day = properties.getRedisTimeout() == null ? 1L : properties.getRedisTimeout() ;
         logger.info("sbc-request-check init......");
+        logger.info(String.format("redis prefix is [%s],timeout is [%s]", prefixReq, day));
     }
 
     /**
@@ -72,7 +75,7 @@ public class ReqNoDrcAspect {
                     if((StringUtil.isEmpty(tempReqNo))){
                         redisTemplate.opsForValue().set(prefixReq + reqNo, reqNo, day, TimeUnit.DAYS);
                     }else{
-                        throw new SBCException("请求号重复,reqNo=" + reqNo);
+                        throw new SBCException("请求号重复,"+ prefixReq +"=" + reqNo);
                     }
 
                 } catch (RedisConnectionFailureException e){
