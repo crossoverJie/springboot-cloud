@@ -29,19 +29,20 @@
 
 ## TODO LIST
 
-* [x] SpringBoot+SpringCloud初探:[https://crossoverjie.top/2017/06/15/sbc1/](https://crossoverjie.top/2017/06/15/sbc1)
-* [ ] `Feign`声明式远程调用,`Eureka`高可用注册中心,`Swagger2`管理`REST API`。
+* [x] [SpringBoot+SpringCloud初探](http://crossoverjie.top/2017/06/15/sbc1/)
+* [x] [`Feign`声明式远程调用,`Eureka`高可用注册中心,`Swagger2`管理`REST API`](http://crossoverjie.top/2017/07/19/sbc2/)
 * [ ] 基于`SpringBoot`重构:[https://github.com/crossoverJie/SSM-REQUEST-CHECK](https://github.com/crossoverJie/SSM-REQUEST-CHECK)
 * [ ] 通用的异常处理、日志插件、集成logback。
 * [ ] 更多功能未完待续。。。
 
-## 应用截图
+## Partial Screenshots
 ![https://ooo.0o0.ooo/2017/06/26/59511cef59d46.jpg](https://ooo.0o0.ooo/2017/06/26/59511cef59d46.jpg)
 
-# 联系作者
+# Contact Author
 - [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
 
-![weixinchat.jpg](https://ooo.0o0.ooo/2017/04/25/58ff4d5fd9fa3.jpg)
+![weixinchat.jpg](https://i.loli.net/2017/07/21/5971592b04340.jpg)
+
 
 
 
