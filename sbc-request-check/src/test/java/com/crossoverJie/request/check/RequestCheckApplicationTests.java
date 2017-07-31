@@ -1,4 +1,4 @@
-package com.crossoverJie.request.check.requestcheck;
+package com.crossoverJie.request.check;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

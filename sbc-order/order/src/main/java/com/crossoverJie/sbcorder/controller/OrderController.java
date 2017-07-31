@@ -3,6 +3,7 @@ package com.crossoverJie.sbcorder.controller;
 import com.crossoverJie.order.api.OrderService;
 import com.crossoverJie.order.vo.req.OrderNoReqVO;
 import com.crossoverJie.order.vo.res.OrderNoResVO;
+import com.crossoverJie.request.check.anotation.CheckReqNo;
 import com.crossoverJie.sbcorder.common.enums.StatusEnum;
 import com.crossoverJie.sbcorder.common.exception.SBCException;
 import com.crossoverJie.sbcorder.common.res.BaseResponse;
@@ -26,6 +27,7 @@ public class OrderController implements OrderService{
 
 
     @Override
+    @CheckReqNo
     public BaseResponse<OrderNoResVO> getOrderNo(@RequestBody OrderNoReqVO orderNoReq) {
         BaseResponse<OrderNoResVO> res = new BaseResponse();
         res.setReqNo(orderNoReq.getReqNo());

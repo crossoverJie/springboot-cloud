@@ -24,6 +24,12 @@ public class SBCException extends RuntimeException implements Serializable{
         this.errMsg = errMsg;
     }
 
+    public SBCException(String errMsg) {
+        super(errMsg);
+        this.errCode = StatusEnum.FAIL.getCode();
+        this.errMsg = errMsg;
+    }
+
     public SBCException(StatusEnum statusEnum) {
         super(statusEnum.getMessage());
         this.errCode = statusEnum.getCode();
