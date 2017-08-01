@@ -20,6 +20,16 @@
 │   ├── src/main
 │   ├── ├──java/com/crossoverJie/sbcuser/
 │   ├── ├──resources
+├── sbc-common                                    // common包，通用组件。  
+│   ├── src/main
+│   ├── ├──com/crossoverJie/request/check         // 具体代码。 
+│   ├── ├──├──anotation                           // 注解
+│   ├── ├──├──conf                                // 自动化配置相关类
+│   ├── ├──├──interceptor                         // 切面
+│   ├── ├──├──properties                          // 配置封装类
+│   ├── ├──resources
+│   ├── ├──├──META-INF
+│   ├── ├──├──├──spring.factories                 // 自动化配置文件
 ├── .gitignore                                    // git忽略项
 ├── LICENSE                
 ├── README.md               
