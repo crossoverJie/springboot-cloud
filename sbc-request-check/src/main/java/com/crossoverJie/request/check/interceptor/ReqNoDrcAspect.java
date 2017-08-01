@@ -31,6 +31,7 @@ import java.util.concurrent.TimeUnit;
 @Aspect
 //扫描
 @Component
+//开启cglib代理
 @EnableAspectJAutoProxy(proxyTargetClass = true)
 public class ReqNoDrcAspect {
     private static Logger logger = LoggerFactory.getLogger(ReqNoDrcAspect.class);

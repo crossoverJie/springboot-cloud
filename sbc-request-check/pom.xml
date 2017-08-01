@@ -42,12 +42,14 @@
 			<artifactId>spring-boot-starter-redis</artifactId>
 		</dependency>
 
+		<!--配置相关-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
 
+		<!--通用依赖-->
 		<dependency>
 			<groupId>com.crossoverJie</groupId>
 			<artifactId>sbc-common</artifactId>
