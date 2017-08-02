@@ -20,7 +20,7 @@
 │   ├── src/main
 │   ├── ├──java/com/crossoverJie/sbcuser/
 │   ├── ├──resources
-├── sbc-common                                    // common包，通用组件。  
+├── sbc-request-check                             // 去重starter
 │   ├── src/main
 │   ├── ├──com/crossoverJie/request/check         // 具体代码。 
 │   ├── ├──├──anotation                           // 注解
