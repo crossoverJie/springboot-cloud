@@ -20,6 +20,16 @@
 │   ├── src/main
 │   ├── ├──java/com/crossoverJie/sbcuser/
 │   ├── ├──resources
+├── sbc-request-check                             // 去重starter
+│   ├── src/main
+│   ├── ├──com/crossoverJie/request/check         // 具体代码。 
+│   ├── ├──├──anotation                           // 注解
+│   ├── ├──├──conf                                // 自动化配置相关类
+│   ├── ├──├──interceptor                         // 切面
+│   ├── ├──├──properties                          // 配置封装类
+│   ├── ├──resources
+│   ├── ├──├──META-INF
+│   ├── ├──├──├──spring.factories                 // 自动化配置文件
 ├── .gitignore                                    // git忽略项
 ├── LICENSE                
 ├── README.md               
@@ -31,7 +41,8 @@
 
 * [x] [SpringBoot+SpringCloud初探](http://crossoverjie.top/2017/06/15/sbc1/)
 * [x] [`Feign`声明式远程调用,`Eureka`高可用注册中心,`Swagger2`管理`REST API`](http://crossoverjie.top/2017/07/19/sbc2/)
-* [ ] 基于`SpringBoot`重构:[https://github.com/crossoverJie/SSM-REQUEST-CHECK](https://github.com/crossoverJie/SSM-REQUEST-CHECK)
+* [x] [自定义`Starter-SpringBoot`重构去重插件](https://crossoverjie.top/2017/08/01/sbc3/)
+* [ ] 限流应用。
 * [ ] 通用的异常处理、日志插件、集成logback。
 * [ ] 更多功能未完待续。。。
 
