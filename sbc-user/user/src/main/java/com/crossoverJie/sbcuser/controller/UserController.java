@@ -11,6 +11,7 @@ import com.crossoverJie.sbcuser.res.UserRes;
 import com.crossoverJie.user.api.UserService;
 import com.crossoverJie.user.vo.req.UserReqVO;
 import com.crossoverJie.user.vo.res.UserResVO;
+import com.google.common.util.concurrent.RateLimiter;
 import io.swagger.annotations.Api;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -72,6 +73,32 @@ public class UserController implements UserService{
         userRes.setUserName("张三");
 
         userRes.setReqNo(userReq.getReqNo());
+        userRes.setCode(StatusEnum.SUCCESS.getCode());
+        userRes.setMessage("成功");
+
+        return userRes ;
+    }
+
+    @Override
+    public BaseResponse<UserResVO> getUserByFeignBatch(@RequestBody UserReqVO userReqVO) {
+        //调用远程服务
+        OrderNoReqVO vo = new OrderNoReqVO() ;
+        vo.setReqNo(userReqVO.getReqNo());
+
+        RateLimiter limiter = RateLimiter.create(2.0) ;
+        //批量调用
+        for (int i = 0 ;i< 10 ; i++){
+            double acquire = limiter.acquire();
+            logger.debug("获取令牌成功!,消耗=" + acquire);
+            BaseResponse<OrderNoResVO> orderNo = orderServiceClient.getOrderNo(vo);
+            logger.debug("远程返回:"+JSON.toJSONString(orderNo));
+        }
+
+        UserRes userRes = new UserRes() ;
+        userRes.setUserId(123);
+        userRes.setUserName("张三");
+
+        userRes.setReqNo(userReqVO.getReqNo());
         userRes.setCode(StatusEnum.SUCCESS.getCode());
         userRes.setMessage("成功");
 
