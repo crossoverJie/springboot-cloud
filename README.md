@@ -49,6 +49,12 @@
 ## Partial Screenshots
 ![https://ooo.0o0.ooo/2017/06/26/59511cef59d46.jpg](https://ooo.0o0.ooo/2017/06/26/59511cef59d46.jpg)
 
+![05.jpg](https://i.loli.net/2017/07/21/5970ea9544a8c.jpg)
+
+![03.jpg](https://i.loli.net/2017/08/01/59803ca7d603d.jpg)
+
+![令牌桶算法-来自网络.gif](https://i.loli.net/2017/08/11/598c91f2a33af.gif)
+
 # Contact Author
 - [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
 
