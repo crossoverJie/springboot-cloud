@@ -1,36 +1,36 @@
 # springboot-cloud
 
-:point_right:基于springBoot+springCloud构建的分布式微服务。:point_left:
+:point_right:Distributed Micro Service Based on SpringBoot + springCloud.:point_left:
 
 ## 目录结构
 ```shell
-├── sbc-common                                    // common包，通用组件。  
+├── sbc-common                                    // common package.  
 │   ├── src/main
-│   ├── ├──java/com/crossoverJie/sbcorder/common  // 具体代码。  
+│   ├── ├──java/com/crossoverJie/sbcorder/common  // Specific code.  
 │   ├── ├──resources
-├── sbc-order                                     // order应用            :8181端口
+├── sbc-order                                     // order app                         :8181 port.
 │   ├── src/main
-│   ├── ├──java/com/crossoverJie/sbcorder         // 具体代码
+│   ├── ├──java/com/crossoverJie/sbcorder         // Specific code.
 │   ├── ├──resources
-├── sbc-service                                   // eureka-server注册中心 :8888端口
+├── sbc-service                                   // eureka-server Registration center :8888 port.
 │   ├── src/main
-│   ├── ├──java/com/crossoverJie/service/         // 具体代码
+│   ├── ├──java/com/crossoverJie/service/         // Specific code.
 │   ├── ├──resources
-├── sbc-user                                      // user应用             :8080端口
+├── sbc-user                                      // user app.                         :8080 port.
 │   ├── src/main
 │   ├── ├──java/com/crossoverJie/sbcuser/
 │   ├── ├──resources
-├── sbc-request-check                             // 去重starter
+├── sbc-request-check                             // remove duplicates starter.
 │   ├── src/main
-│   ├── ├──com/crossoverJie/request/check         // 具体代码。 
-│   ├── ├──├──anotation                           // 注解
-│   ├── ├──├──conf                                // 自动化配置相关类
-│   ├── ├──├──interceptor                         // 切面
-│   ├── ├──├──properties                          // 配置封装类
+│   ├── ├──com/crossoverJie/request/check         // Specific code. 
+│   ├── ├──├──anotation                           // anotation package.
+│   ├── ├──├──conf                                // Automate configuration-related code.
+│   ├── ├──├──interceptor                         // Aspect.
+│   ├── ├──├──properties                          // configuration.
 │   ├── ├──resources
 │   ├── ├──├──META-INF
-│   ├── ├──├──├──spring.factories                 // 自动化配置文件
-├── .gitignore                                    // git忽略项
+│   ├── ├──├──├──spring.factories                 // Automated configuration files.
+├── .gitignore                                    
 ├── LICENSE                
 ├── README.md               
 
