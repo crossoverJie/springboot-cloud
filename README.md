@@ -2,7 +2,7 @@
 
 [中文简介](https://github.com/crossoverJie/springboot-cloud/blob/master/README-ZH.md)
 
-:point_right:Distributed Micro Service Based on SpringBoot + springCloud.:point_left: 
+:point_right:Distributed Micro Service Based on SpringBoot + springCloud.:point_left:
 
 ## 目录结构
 ```shell
