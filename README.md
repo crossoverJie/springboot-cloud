@@ -45,6 +45,7 @@
 * [x] [`Feign`声明式远程调用,`Eureka`高可用注册中心,`Swagger2`管理`REST API`](http://crossoverjie.top/2017/07/19/sbc2/)
 * [x] [自定义`Starter-SpringBoot`重构去重插件](https://crossoverjie.top/2017/08/01/sbc3/)
 * [x] [应用限流](https://crossoverjie.top/2017/08/11/sbc4/)。
+* [ ] `Hystrix`服务的保护与容错
 * [ ] 通用的异常处理、日志插件、集成logback。
 * [ ] 更多功能未完待续。。。
 
