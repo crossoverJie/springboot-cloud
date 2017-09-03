@@ -12,6 +12,8 @@ import java.util.List;
 public enum  StatusEnum {
     /** 成功 */
     SUCCESS("9000", "成功"),
+    /** 成功 */
+    FALLBACK("8000", "FALL_BACK"),
     /** 参数校验失败**/
     VALIDATION_FAIL("3000", "参数校验失败"),
     /** 失败 */

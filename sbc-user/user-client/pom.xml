@@ -21,6 +21,10 @@
             <artifactId>user-api</artifactId>
             <version>${target.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.crossoverJie</groupId>
+            <artifactId>order-client</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>

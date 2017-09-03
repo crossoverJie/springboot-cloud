@@ -1,5 +1,6 @@
 package com.crossoverJie.user.feign.api;
 
+import com.crossoverJie.order.vo.res.OrderNoResVO;
 import com.crossoverJie.sbcorder.common.res.BaseResponse;
 import com.crossoverJie.user.api.UserService;
 import com.crossoverJie.user.vo.req.UserReqVO;
@@ -36,4 +37,8 @@ public interface UserServiceClient extends UserService{
     @ApiOperation("批量请求接口")
     @RequestMapping(value = "/getUserByFeignBatch", method = RequestMethod.POST)
     BaseResponse<UserResVO> getUserByFeignBatch(@RequestBody UserReqVO userReqVO) ;
+
+    @ApiOperation("hystrix容错调用")
+    @RequestMapping(value = "/getUserByHystrix", method = RequestMethod.POST)
+    BaseResponse<OrderNoResVO> getUserByHystrix(@RequestBody UserReqVO userReqVO) ;
 }

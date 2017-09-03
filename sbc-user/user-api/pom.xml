@@ -43,6 +43,10 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.crossoverJie</groupId>
+            <artifactId>order-client</artifactId>
+        </dependency>
 
     </dependencies>
 

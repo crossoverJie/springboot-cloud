@@ -104,4 +104,16 @@ public class UserController implements UserService{
 
         return userRes ;
     }
+
+
+    @Override
+    public BaseResponse<OrderNoResVO> getUserByHystrix(@RequestBody UserReqVO userReqVO) {
+
+        OrderNoReqVO vo = new OrderNoReqVO() ;
+        vo.setAppId(123L);
+        vo.setReqNo(userReqVO.getReqNo());
+        BaseResponse<OrderNoResVO> orderNo = orderServiceClient.getOrderNo(vo);
+        return orderNo ;
+    }
+
 }
