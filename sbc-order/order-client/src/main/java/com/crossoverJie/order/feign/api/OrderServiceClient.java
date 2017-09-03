@@ -2,7 +2,7 @@ package com.crossoverJie.order.feign.api;
 
 import com.crossoverJie.order.api.OrderService;
 import com.crossoverJie.order.feign.config.OrderConfig;
-import com.crossoverJie.order.feign.fallback.OrderServiceFallBack;
+import com.crossoverJie.order.feign.fallback.OrderServiceFallbackFactory;
 import com.crossoverJie.order.vo.req.OrderNoReqVO;
 import com.crossoverJie.order.vo.res.OrderNoResVO;
 import com.crossoverJie.sbcorder.common.res.BaseResponse;
@@ -21,7 +21,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @since JDK 1.8
  */
 @RequestMapping(value="/orderService")
-@FeignClient(name="sbc-order",fallback = OrderServiceFallBack.class,configuration = OrderConfig.class)
+@FeignClient(name="sbc-order",
+        fallbackFactory = OrderServiceFallbackFactory.class,
+        // FIXME: 2017/9/4 如果配置了fallback 那么fallbackFactory将会无效
+        //fallback = OrderServiceFallBack.class,
+        configuration = OrderConfig.class)
 @RibbonClient
 public interface OrderServiceClient extends OrderService{
 

@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Api(value = "orderApi", description = "订单API", tags = {"订单服务"})
 public class OrderController implements OrderService{
-    private final static Logger logger = LoggerFactory.getLogger(OrderController.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(OrderController.class);
 
 
     @Override
