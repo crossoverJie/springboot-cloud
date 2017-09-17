@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/crossoverJie/springboot-cloud.svg?branch=master)](https://travis-ci.org/crossoverJie/springboot-cloud)
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)
+[![](https://badge.juejin.im/entry/59514b615188250d7f23e576/likes.svg?style=flat-square)](https://juejin.im/post/59514b3a6fb9a06bcb7f75b8)
+
 # springboot-cloud
 
 :point_right:基于springBoot+springCloud构建的分布式微服务。:point_left:

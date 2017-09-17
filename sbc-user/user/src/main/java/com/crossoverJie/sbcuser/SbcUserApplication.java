@@ -14,6 +14,9 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 //开启 /hystrix.stream访问
 @EnableHystrix
 
+//开启hystrix Dashboard监控面板
+//@EnableHystrixDashboard
+
 //扫描feign包
 @EnableFeignClients(basePackages = {"com.crossoverJie.order.feign.api"})
 public class SbcUserApplication {

@@ -77,6 +77,16 @@
             <artifactId>sbc-common</artifactId>
         </dependency>
 
+        <!-- 用于暴露自身信息的模块，它的主要作用是用于监控与管理 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
