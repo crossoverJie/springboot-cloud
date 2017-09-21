@@ -34,6 +34,10 @@
 │   ├── ├──resources
 │   ├── ├──├──META-INF
 │   ├── ├──├──├──spring.factories                 // 自动化配置文件
+├── sbc-hystix-turbine                            // Hystrix 面板         :8282 端口.
+│   ├── src/main
+│   ├── ├──java/com/crossoverJie/hystrix/turbine
+│   ├── ├──resources
 ├── .gitignore                                    // git忽略项
 ├── LICENSE                
 ├── README.md               
