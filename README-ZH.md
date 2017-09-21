@@ -60,7 +60,7 @@
 
 ![令牌桶算法-来自网络.gif](https://i.loli.net/2017/08/11/598c91f2a33af.gif)
 
-![](https://ws3.sinaimg.cn/large/006tNc79ly1fjrb6v5ww7j31ga0dr416.jpg)
+![hystrix](https://ws3.sinaimg.cn/large/006tNc79ly1fjrb6v5ww7j31ga0dr416.jpg)
 
 
 # Contact Author
