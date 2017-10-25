@@ -8,7 +8,7 @@
 
 :point_right:Distributed Micro Service Based on SpringBoot + springCloud.:point_left:
 
-## 目录结构
+## Directory Structure
 ```shell
 ├── sbc-common                                    // common package.  
 │   ├── src/main

@@ -34,7 +34,7 @@
 │   ├── ├──resources
 │   ├── ├──├──META-INF
 │   ├── ├──├──├──spring.factories                 // 自动化配置文件
-├── sbc-hystix-turbine                            // Hystrix 面板         :8282 端口.
+├── sbc-hystix-turbine                            // Hystrix 面板         :8282 端口.
 │   ├── src/main
 │   ├── ├──java/com/crossoverJie/hystrix/turbine
 │   ├── ├──resources
@@ -55,7 +55,7 @@
 * [ ]  `Zuul`网关应用
 * [ ] 更多功能未完待续。。。
 
-## Partial Screenshots
+## 应用截图
 ![https://ooo.0o0.ooo/2017/06/26/59511cef59d46.jpg](https://ooo.0o0.ooo/2017/06/26/59511cef59d46.jpg)
 
 ![05.jpg](https://i.loli.net/2017/07/21/5970ea9544a8c.jpg)
@@ -67,7 +67,7 @@
 ![hystrix](https://ws3.sinaimg.cn/large/006tNc79ly1fjrb6v5ww7j31ga0dr416.jpg)
 
 
-# Contact Author
+# 联系作者
 - [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
 
 ![](https://ws2.sinaimg.cn/large/006tNc79ly1fjrb8w0g03j30by0byq3w.jpg)
