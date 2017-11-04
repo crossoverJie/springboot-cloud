@@ -18,6 +18,8 @@ public class SbcUserApplicationTests {
 	@Autowired
 	private OrderServiceClient orderServiceClient ;
 
+	
+	
 	@Test
 	public void contextLoads() {
 		OrderNoReqVO vo = new OrderNoReqVO() ;
