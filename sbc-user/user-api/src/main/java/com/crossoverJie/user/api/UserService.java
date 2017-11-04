@@ -25,6 +25,8 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 public interface UserService {
 
+    //测试
+  
     @ApiOperation("获取用户")
     @RequestMapping(value = "/getUser", method = RequestMethod.POST)
     BaseResponse<UserResVO> getOrderNo(@RequestBody UserReqVO userReqVO) ;
