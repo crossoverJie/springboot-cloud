@@ -38,6 +38,8 @@ public class UserController implements UserService{
     @Autowired
     private OrderServiceClient orderServiceClient ;
 
+    private final static int COUNT =10 ;
+
 
     @Override
     public BaseResponse<UserResVO> getOrderNo(@RequestBody UserReqVO userReq) {
@@ -87,7 +89,7 @@ public class UserController implements UserService{
 
         RateLimiter limiter = RateLimiter.create(2.0) ;
         //批量调用
-        for (int i = 0 ;i< 10 ; i++){
+        for (int i = 0 ;i< COUNT ; i++){
             double acquire = limiter.acquire();
             logger.debug("获取令牌成功!,消耗=" + acquire);
             BaseResponse<OrderNoResVO> orderNo = orderServiceClient.getOrderNo(vo);
