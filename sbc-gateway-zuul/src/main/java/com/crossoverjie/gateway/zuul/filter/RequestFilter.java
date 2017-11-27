@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 public class RequestFilter extends ZuulFilter {
     private Logger logger = LoggerFactory.getLogger(RequestFilter.class) ;
     /**
-     * 请求路由之前被拦截
+     * 请求路由之前被拦截 实现 pre 拦截器
      * @return
      */
     @Override
