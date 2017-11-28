@@ -12,6 +12,10 @@
 │   ├── src/main
 │   ├── ├──java/com/crossoverJie/sbcorder/common  // 具体代码。  
 │   ├── ├──resources
+├── sbc-gateway-zuul                              // 网关应用.  
+│   ├── src/main
+│   ├── ├──java/com/crossoverJie/gateway/zuul     //                     :8383端口 .
+│   ├── ├──resources
 ├── sbc-order                                     // order应用            :8181端口
 │   ├── src/main
 │   ├── ├──java/com/crossoverJie/sbcorder         // 具体代码
@@ -52,7 +56,8 @@
 * [x] [自定义`Starter-SpringBoot`重构去重插件](https://crossoverjie.top/2017/08/01/sbc3/)
 * [x] [应用限流](http://crossoverjie.top/2017/08/11/sbc4/)
 * [x] [`Hystrix`服务的保护与容错](https://crossoverjie.top/2017/09/20/sbc5/)
-* [ ]  `Zuul`网关应用
+* [x] [`Zuul`网关应用](http://crossoverjie.top/2017/11/28/sbc6/)
+* [ ] 排查利器 ———— 分布式追踪
 * [ ] 更多功能未完待续。。。
 
 ## 应用截图
@@ -65,6 +70,8 @@
 ![令牌桶算法-来自网络.gif](https://i.loli.net/2017/08/11/598c91f2a33af.gif)
 
 ![hystrix](https://ws3.sinaimg.cn/large/006tNc79ly1fjrb6v5ww7j31ga0dr416.jpg)
+
+![Zuul](https://ws3.sinaimg.cn/large/006tKfTcly1flx79q95c0j30o80m8757.jpg)
 
 
 # 联系作者
