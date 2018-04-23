@@ -59,6 +59,7 @@
 * [x] [应用限流](http://crossoverjie.top/2017/08/11/sbc4/)
 * [x] [`Hystrix`服务的保护与容错](http://crossoverjie.top/2017/09/20/sbc5/)
 * [x] [`Zuul`网关应用](http://crossoverjie.top/2017/11/28/sbc6/)
+* [ ] 分布式限流
 * [ ] 排查利器 ———— 分布式追踪
 * [ ] 更多功能未完待续。。。
 
