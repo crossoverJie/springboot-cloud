@@ -87,6 +87,12 @@
             <artifactId>spring-cloud-starter-hystrix</artifactId>
         </dependency>
 
+
+        <dependency>
+            <groupId>top.crossoverjie.opensource</groupId>
+            <artifactId>distributed-redis-tool</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
