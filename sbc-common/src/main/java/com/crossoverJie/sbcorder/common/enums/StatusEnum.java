@@ -21,6 +21,9 @@ public enum  StatusEnum {
 
     /** 重复请求 */
     REPEAT_REQUEST("5000", "重复请求"),
+
+    /** 请求限流 */
+    REQUEST_LIMIT("6000", "请求限流"),
     ;
 
 
