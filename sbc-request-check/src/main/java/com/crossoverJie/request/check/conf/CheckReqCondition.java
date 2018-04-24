@@ -8,7 +8,7 @@ import org.springframework.core.type.AnnotatedTypeMetadata;
 import org.springframework.util.StringUtils;
 
 /**
- * Function:校验是否有redis配置
+ * Function:校验是否有 redis 配置
  *
  * @author crossoverJie
  *         Date: 2017/8/1 00:22
@@ -24,7 +24,8 @@ public class CheckReqCondition implements Condition {
 
         //如果没有加入redis配置的就返回false
         String property = context.getEnvironment().getProperty("spring.redis.host");
-        if (StringUtils.isEmpty(property)){
+        String clusterProperty = context.getEnvironment().getProperty("spring.redis.cluster.nodes");
+        if (StringUtils.isEmpty(property) || StringUtils.isEmpty(clusterProperty)){
             logger.warn("Need to configure redis!");
             return false ;
         }else {
