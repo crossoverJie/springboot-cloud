@@ -25,7 +25,7 @@ public class CheckReqCondition implements Condition {
         //如果没有加入redis配置的就返回false
         String property = context.getEnvironment().getProperty("spring.redis.host");
         String clusterProperty = context.getEnvironment().getProperty("spring.redis.cluster.nodes");
-        if (StringUtils.isEmpty(property) || StringUtils.isEmpty(clusterProperty)){
+        if (StringUtils.isEmpty(property) && StringUtils.isEmpty(clusterProperty)){
             logger.warn("Need to configure redis!");
             return false ;
         }else {
