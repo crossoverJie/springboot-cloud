@@ -23,13 +23,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value="/orderService")
 @FeignClient(name="sbc-order",
         fallbackFactory = OrderServiceFallbackFactory.class,
-        // FIXME: 2017/9/4 如果配置了fallback 那么fallbackFactory将会无效
+        // FIXME: 2017/9/4 如果配置了 fallback 那么 fallbackFactory 将会无效
         //fallback = OrderServiceFallBack.class,
         configuration = OrderConfig.class)
 @RibbonClient
 public interface OrderServiceClient extends OrderService{
 
 
+    /**
+     * 获取订单号
+     * @param orderNoReq
+     * @return
+     */
+    @Override
     @ApiOperation("获取订单号")
     @RequestMapping(value = "/getOrderNo", method = RequestMethod.POST)
     BaseResponse<OrderNoResVO> getOrderNo(@RequestBody OrderNoReqVO orderNoReq) ;
