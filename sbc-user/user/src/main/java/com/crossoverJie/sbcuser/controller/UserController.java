@@ -65,6 +65,7 @@ public class UserController implements UserService{
     public BaseResponse<UserResVO> getUserByFeign(@RequestBody UserReqVO userReq) {
         //调用远程服务
         OrderNoReqVO vo = new OrderNoReqVO() ;
+        vo.setAppId(1L);
         vo.setReqNo(userReq.getReqNo());
         BaseResponse<OrderNoResVO> orderNo = orderServiceClient.getOrderNo(vo);
 
@@ -86,6 +87,7 @@ public class UserController implements UserService{
         //调用远程服务
         OrderNoReqVO vo = new OrderNoReqVO() ;
         vo.setReqNo(userReqVO.getReqNo());
+        vo.setAppId(1L);
 
         RateLimiter limiter = RateLimiter.create(2.0) ;
         //批量调用
