@@ -21,11 +21,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @since JDK 1.8
  */
 @RequestMapping(value="/orderService")
-@FeignClient(name="sbc-order",
-        fallbackFactory = OrderServiceFallbackFactory.class,
+@FeignClient(name="sbc-order"
+        //// FIXME: 26/04/2018 为了方便测试，先把降级关掉
+        //fallbackFactory = OrderServiceFallbackFactory.class,
         // FIXME: 2017/9/4 如果配置了 fallback 那么 fallbackFactory 将会无效
         //fallback = OrderServiceFallBack.class,
-        configuration = OrderConfig.class)
+        //configuration = OrderConfig.class
+)
 @RibbonClient
 public interface OrderServiceClient extends OrderService{
 
