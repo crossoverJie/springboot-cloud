@@ -14,7 +14,7 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisCluster;
 
 /**
- * Function:
+ * Function: 限流 bean
  *
  * @author crossoverJie
  *         Date: 23/04/2018 23:45
