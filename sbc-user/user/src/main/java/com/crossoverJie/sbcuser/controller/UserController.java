@@ -21,36 +21,43 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import javax.annotation.Resource;
+import java.util.concurrent.ExecutorService;
+
 /**
  * Function:user控制器
+ *
  * @author crossoverJie
- * Date: 2017/6/7 下午11:55
+ *         Date: 2017/6/7 下午11:55
  * @since JDK 1.8
  */
 @RestController
 @Api(value = "userApi", description = "用户API", tags = {"用户服务"})
-public class UserController implements UserService{
+public class UserController implements UserService {
     private final static Logger logger = LoggerFactory.getLogger(UserController.class);
 
     //@Autowired
     private RestTemplate restTemplate;
 
     @Autowired
-    private OrderServiceClient orderServiceClient ;
+    private OrderServiceClient orderServiceClient;
 
-    private final static int COUNT =10 ;
+    private final static int COUNT = 10;
+
+    @Resource(name = "concurrentTestThread")
+    private ExecutorService executorService;
 
 
     @Override
     public BaseResponse<UserResVO> getOrderNo(@RequestBody UserReqVO userReq) {
-        OrderNoReq req = new OrderNoReq() ;
+        OrderNoReq req = new OrderNoReq();
         req.setReqNo("1213");
         //调用远程服务
         ResponseEntity<Object> res = restTemplate.postForEntity("http://sbc-order/order/getOrderNo", req, Object.class);
-        logger.info("res="+JSON.toJSONString(res));
+        logger.info("res=" + JSON.toJSONString(res));
 
-        logger.debug("入参="+ JSON.toJSONString(userReq));
-        UserRes userRes = new UserRes() ;
+        logger.debug("入参=" + JSON.toJSONString(userReq));
+        UserRes userRes = new UserRes();
         userRes.setUserId(123);
         userRes.setUserName("张三");
 
@@ -58,19 +65,21 @@ public class UserController implements UserService{
         userRes.setCode(StatusEnum.SUCCESS.getCode());
         userRes.setMessage("成功");
 
-        return userRes ;
+        return userRes;
     }
 
     @Override
     public BaseResponse<UserResVO> getUserByFeign(@RequestBody UserReqVO userReq) {
         //调用远程服务
-        OrderNoReqVO vo = new OrderNoReqVO() ;
+        OrderNoReqVO vo = new OrderNoReqVO();
+        vo.setAppId(1L);
         vo.setReqNo(userReq.getReqNo());
-        BaseResponse<OrderNoResVO> orderNo = orderServiceClient.getOrderNo(vo);
 
-        logger.info("远程返回:"+JSON.toJSONString(orderNo));
+        for (int i = 0; i < 10; i++) {
+            executorService.execute(new Worker(vo, orderServiceClient));
+        }
 
-        UserRes userRes = new UserRes() ;
+        UserRes userRes = new UserRes();
         userRes.setUserId(123);
         userRes.setUserName("张三");
 
@@ -78,25 +87,26 @@ public class UserController implements UserService{
         userRes.setCode(StatusEnum.SUCCESS.getCode());
         userRes.setMessage("成功");
 
-        return userRes ;
+        return userRes;
     }
 
     @Override
     public BaseResponse<UserResVO> getUserByFeignBatch(@RequestBody UserReqVO userReqVO) {
         //调用远程服务
-        OrderNoReqVO vo = new OrderNoReqVO() ;
+        OrderNoReqVO vo = new OrderNoReqVO();
         vo.setReqNo(userReqVO.getReqNo());
+        vo.setAppId(1L);
 
-        RateLimiter limiter = RateLimiter.create(2.0) ;
+        RateLimiter limiter = RateLimiter.create(2.0);
         //批量调用
-        for (int i = 0 ;i< COUNT ; i++){
+        for (int i = 0; i < COUNT; i++) {
             double acquire = limiter.acquire();
             logger.debug("获取令牌成功!,消耗=" + acquire);
             BaseResponse<OrderNoResVO> orderNo = orderServiceClient.getOrderNo(vo);
-            logger.debug("远程返回:"+JSON.toJSONString(orderNo));
+            logger.debug("远程返回:" + JSON.toJSONString(orderNo));
         }
 
-        UserRes userRes = new UserRes() ;
+        UserRes userRes = new UserRes();
         userRes.setUserId(123);
         userRes.setUserName("张三");
 
@@ -104,18 +114,38 @@ public class UserController implements UserService{
         userRes.setCode(StatusEnum.SUCCESS.getCode());
         userRes.setMessage("成功");
 
-        return userRes ;
+        return userRes;
     }
 
 
     @Override
     public BaseResponse<OrderNoResVO> getUserByHystrix(@RequestBody UserReqVO userReqVO) {
 
-        OrderNoReqVO vo = new OrderNoReqVO() ;
+        OrderNoReqVO vo = new OrderNoReqVO();
         vo.setAppId(123L);
         vo.setReqNo(userReqVO.getReqNo());
         BaseResponse<OrderNoResVO> orderNo = orderServiceClient.getOrderNo(vo);
-        return orderNo ;
+        return orderNo;
+    }
+
+
+    private static class Worker implements Runnable {
+
+        private OrderNoReqVO vo;
+        private OrderServiceClient orderServiceClient;
+
+        public Worker(OrderNoReqVO vo, OrderServiceClient orderServiceClient) {
+            this.vo = vo;
+            this.orderServiceClient = orderServiceClient;
+        }
+
+        @Override
+        public void run() {
+
+            BaseResponse<OrderNoResVO> orderNo = orderServiceClient.getOrderNoCommonLimit(vo);
+            logger.info("远程返回:" + JSON.toJSONString(orderNo));
+
+        }
     }
 
 }

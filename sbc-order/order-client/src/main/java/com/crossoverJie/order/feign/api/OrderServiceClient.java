@@ -21,16 +21,47 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @since JDK 1.8
  */
 @RequestMapping(value="/orderService")
-@FeignClient(name="sbc-order",
-        fallbackFactory = OrderServiceFallbackFactory.class,
-        // FIXME: 2017/9/4 如果配置了fallback 那么fallbackFactory将会无效
+@FeignClient(name="sbc-order"
+        //// FIXME: 26/04/2018 为了方便测试，先把降级关掉
+        //fallbackFactory = OrderServiceFallbackFactory.class,
+        // FIXME: 2017/9/4 如果配置了 fallback 那么 fallbackFactory 将会无效
         //fallback = OrderServiceFallBack.class,
-        configuration = OrderConfig.class)
+        //configuration = OrderConfig.class
+)
 @RibbonClient
 public interface OrderServiceClient extends OrderService{
 
 
+    /**
+     * 获取订单号
+     * @param orderNoReq
+     * @return
+     */
+    @Override
     @ApiOperation("获取订单号")
     @RequestMapping(value = "/getOrderNo", method = RequestMethod.POST)
     BaseResponse<OrderNoResVO> getOrderNo(@RequestBody OrderNoReqVO orderNoReq) ;
+
+
+
+    /**
+     * 限流获取订单号
+     * @param orderNoReq
+     * @return
+     */
+    @Override
+    @ApiOperation("限流获取订单号")
+    @RequestMapping(value = "/getOrderNoLimit", method = RequestMethod.POST)
+    BaseResponse<OrderNoResVO> getOrderNoLimit(@RequestBody OrderNoReqVO orderNoReq) ;
+
+
+    /**
+     * 通用限流获取订单号
+     * @param orderNoReq
+     * @return
+     */
+    @Override
+    @ApiOperation("通用限流获取订单号")
+    @RequestMapping(value = "/getOrderNoCommonLimit", method = RequestMethod.POST)
+    BaseResponse<OrderNoResVO> getOrderNoCommonLimit(@RequestBody OrderNoReqVO orderNoReq) ;
 }

@@ -24,20 +24,24 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface UserServiceClient extends UserService{
 
 
+    @Override
     @ApiOperation("获取用户")
     @RequestMapping(value = "/getOrderNo", method = RequestMethod.POST)
     BaseResponse<UserResVO> getOrderNo(@RequestBody UserReqVO orderNoReq) ;
 
 
+    @Override
     @ApiOperation("通过Feign获取用户")
     @RequestMapping(value = "/getUserByFeign", method = RequestMethod.POST)
     BaseResponse<UserResVO> getUserByFeign(@RequestBody UserReqVO userReqVO) ;
 
 
+    @Override
     @ApiOperation("批量请求接口")
     @RequestMapping(value = "/getUserByFeignBatch", method = RequestMethod.POST)
     BaseResponse<UserResVO> getUserByFeignBatch(@RequestBody UserReqVO userReqVO) ;
 
+    @Override
     @ApiOperation("hystrix容错调用")
     @RequestMapping(value = "/getUserByHystrix", method = RequestMethod.POST)
     BaseResponse<OrderNoResVO> getUserByHystrix(@RequestBody UserReqVO userReqVO) ;

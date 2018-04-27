@@ -25,4 +25,14 @@ public class OrderServiceFallBack implements OrderServiceClient {
         baseResponse.setCode(StatusEnum.FALLBACK.getCode());
         return baseResponse;
     }
+
+    @Override
+    public BaseResponse<OrderNoResVO> getOrderNoLimit(@RequestBody OrderNoReqVO orderNoReq) {
+        return null;
+    }
+
+    @Override
+    public BaseResponse<OrderNoResVO> getOrderNoCommonLimit(@RequestBody OrderNoReqVO orderNoReq) {
+        return null;
+    }
 }
