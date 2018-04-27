@@ -25,19 +25,20 @@ public class RedisLimitConfig {
 
 
     @Value("${redis.limit}")
-    private int limit ;
+    private int limit;
 
 
     @Autowired
     private JedisConnectionFactory jedisConnectionFactory;
 
     @Bean
-    public RedisLimit build(){
+    public RedisLimit build() {
         RedisClusterConnection clusterConnection = jedisConnectionFactory.getClusterConnection();
         JedisCluster jedisCluster = (JedisCluster) clusterConnection.getNativeConnection();
         RedisLimit redisLimit = new RedisLimit.Builder<>(jedisCluster)
                 .limit(limit)
                 .build();
+
         return redisLimit;
     }
 }

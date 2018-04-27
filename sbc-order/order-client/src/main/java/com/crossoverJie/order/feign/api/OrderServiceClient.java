@@ -41,4 +41,27 @@ public interface OrderServiceClient extends OrderService{
     @ApiOperation("获取订单号")
     @RequestMapping(value = "/getOrderNo", method = RequestMethod.POST)
     BaseResponse<OrderNoResVO> getOrderNo(@RequestBody OrderNoReqVO orderNoReq) ;
+
+
+
+    /**
+     * 限流获取订单号
+     * @param orderNoReq
+     * @return
+     */
+    @Override
+    @ApiOperation("限流获取订单号")
+    @RequestMapping(value = "/getOrderNoLimit", method = RequestMethod.POST)
+    BaseResponse<OrderNoResVO> getOrderNoLimit(@RequestBody OrderNoReqVO orderNoReq) ;
+
+
+    /**
+     * 通用限流获取订单号
+     * @param orderNoReq
+     * @return
+     */
+    @Override
+    @ApiOperation("通用限流获取订单号")
+    @RequestMapping(value = "/getOrderNoCommonLimit", method = RequestMethod.POST)
+    BaseResponse<OrderNoResVO> getOrderNoCommonLimit(@RequestBody OrderNoReqVO orderNoReq) ;
 }
