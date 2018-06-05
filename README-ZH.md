@@ -77,7 +77,6 @@
 # 联系作者
 - [crossoverJie@gmail.com](mailto:crossoverJie@gmail.com)
 
-![](https://ws2.sinaimg.cn/large/006tNc79ly1fjrb8w0g03j30by0byq3w.jpg)
-
+![](https://ws1.sinaimg.cn/large/006tKfTcly1frz6eaf3s4j308c0au0ss.jpg)
 
 
