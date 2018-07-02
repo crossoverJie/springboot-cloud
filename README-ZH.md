@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/crossoverJie/springboot-cloud.svg?branch=master)](https://travis-ci.org/crossoverJie/springboot-cloud)
+[![QQ群](https://img.shields.io/badge/QQ%E7%BE%A4-787381170-yellowgreen.svg)](https://jq.qq.com/?_wv=1027&k=5HPYvQk)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badge/)
 [![](https://badge.juejin.im/entry/59514b615188250d7f23e576/likes.svg?style=flat-square)](https://juejin.im/post/59514b3a6fb9a06bcb7f75b8)
 
